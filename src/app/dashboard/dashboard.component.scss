@@ -1,0 +1,77 @@
+.main{
+  font-family: Helvetica, sans-serif;
+  font-weight: 700;
+  .heading{
+    background-color: red;
+    color: white;
+    font-size: 32px;
+    text-align: center;
+    padding: 16px;
+    margin-bottom: 72px;
+
+  }
+  .content{
+    .container{
+      text-align: center;
+      .course{
+        margin-bottom: 72px;
+      }
+      .leftTitle{
+        margin: auto;
+      }
+      .dropdown{
+        background-color: rgb(85,191,224);
+        margin: 8px;
+        border-radius: 4px;
+
+        mat-form-field{
+          width: 100%;
+          color: white;
+          text-align: center;
+        }
+      }
+      .addButton{
+        margin: 8px;
+        background-color: rgb(85,191,224);
+        border-radius: 4px;
+        color: white;
+      }
+      .addButton:hover{
+        cursor: pointer;
+      }
+      .data{
+        margin-top: 16px;
+        margin-left: 8px;
+
+        padding: 0;
+        input{
+          width: 100%;
+          border-radius: 4px;
+        }
+      }
+      .action{
+
+        margin:auto;
+        .cross{
+
+          .close{
+            color: red;
+            font-weight: 800;
+            font-size: 32px;
+          }
+        }
+        .cross:hover{
+          cursor: pointer;
+        }
+        .tick{
+          color: greenyellow;
+
+        }
+        .tick:hover{
+          color: green;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

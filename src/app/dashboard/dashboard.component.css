@@ -1,0 +1,53 @@
+.main {
+  font-family: Helvetica, sans-serif;
+  font-weight: 700; }
+  .main .heading {
+    background-color: red;
+    color: white;
+    font-size: 32px;
+    text-align: center;
+    padding: 16px;
+    margin-bottom: 72px; }
+  .main .content .container {
+    text-align: center; }
+    .main .content .container .course {
+      margin-bottom: 72px; }
+    .main .content .container .leftTitle {
+      margin: auto; }
+    .main .content .container .dropdown {
+      background-color: #55bfe0;
+      margin: 8px;
+      border-radius: 4px; }
+      .main .content .container .dropdown mat-form-field {
+        width: 100%;
+        color: white;
+        text-align: center; }
+    .main .content .container .addButton {
+      margin: 8px;
+      background-color: #55bfe0;
+      border-radius: 4px;
+      color: white; }
+    .main .content .container .addButton:hover {
+      cursor: pointer; }
+    .main .content .container .data {
+      margin-top: 16px;
+      margin-left: 8px;
+      padding: 0; }
+      .main .content .container .data input {
+        width: 100%;
+        border-radius: 4px; }
+    .main .content .container .action {
+      margin: auto; }
+      .main .content .container .action .cross .close {
+        color: red;
+        font-weight: 800;
+        font-size: 32px; }
+      .main .content .container .action .cross:hover {
+        cursor: pointer; }
+      .main .content .container .action .tick {
+        color: greenyellow; }
+      .main .content .container .action .tick:hover {
+        color: green;
+        cursor: pointer; }
+
+/*# sourceMappingURL=dashboard.component.css.map */

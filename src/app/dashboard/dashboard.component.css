@@ -17,11 +17,17 @@
     .main .content .container .dropdown {
       background-color: #55bfe0;
       margin: 8px;
-      border-radius: 4px; }
-      .main .content .container .dropdown mat-form-field {
+      border-radius: 4px;
+      text-align: center;
+      justify-content: center; }
+      .main .content .container .dropdown select {
+        background-color: #55bfe0;
         width: 100%;
         color: white;
-        text-align: center; }
+        border: 0;
+        text-align-last: center; }
+        .main .content .container .dropdown select option {
+          text-align: center; }
     .main .content .container .addButton {
       margin: 8px;
       background-color: #55bfe0;
@@ -35,7 +41,8 @@
       padding: 0; }
       .main .content .container .data input {
         width: 100%;
-        border-radius: 4px; }
+        border-radius: 4px;
+        text-align: center; }
     .main .content .container .action {
       margin: auto; }
       .main .content .container .action .cross .close {

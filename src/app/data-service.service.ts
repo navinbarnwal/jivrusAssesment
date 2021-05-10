@@ -9,16 +9,22 @@ export class DataServiceService {
   constructor(private firebase: AngularFireDatabase) { }
 
   appendCourse(courseDataForm){
-    this.courseData = this.firebase.list('/jivrusAssesment/' + courseDataForm);
-    this.courseData.push('');
+    this.courseData = this.firebase.list('/jivrusAssesment/courses');
+    const data = { course: courseDataForm};
+
+    this.courseData.push(data);
   }
 
   appendStudentName(courseName, studentName){
-    this.courseData = this.firebase.list('/jivrusAssesment/' + courseName + '/' + studentName);
-    this.courseData.push('');
+    this.courseData = this.firebase.list('/jivrusAssesment/students' );
+    const data = { course: courseName, student: studentName};
+    this.courseData.push(data );
   }
-  getData(){
-    return this.firebase.list('/');
+  getCourseData(){
+    return this.firebase.list('/jivrusAssesment/courses');
+  }
+  getStudentData(){
+    return this.firebase.list('/jivrusAssesment/students');
   }
   resetData(){
     return this.firebase.database.ref('jivrusAssesment').remove();

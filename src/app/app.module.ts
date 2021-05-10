@@ -20,11 +20,13 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import {config} from 'rxjs';
 import {environment} from '../environments/environment';
+import {SelectedPipe} from './dashboard/selected.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
+    SelectedPipe
 
   ],
   imports: [

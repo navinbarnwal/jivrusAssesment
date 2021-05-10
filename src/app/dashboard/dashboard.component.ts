@@ -4,17 +4,19 @@ import {DataServiceService} from '../data-service.service';
 import {finalize} from 'rxjs/operators';
 import {FormBuilder, Validators} from '@angular/forms';
 
+export interface Coursedata {
+  course: string;
+}
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  studentData = [
-    {course: 'Ina'},
-    {course: 'Mina'},
-    {course: 'Dica'}
-  ];
+  courseDatacIn;
+  studentDataIn;
+  addCourseButtonActivate = false;
+  addStudentButtonActivate = false;
   courseForm = this.fb.group({
     courseName: ['']
   });
@@ -22,18 +24,25 @@ export class DashboardComponent implements OnInit {
     courseName: ['', Validators.required],
     studentName: ['']
   });
-  allData: any;
+
   addCourseInput: string;
   courseSelected = '';
+  studentSelected;
+  setCourse = this.courseSelected;
 
-  constructor(private courseData: DataServiceService,
+  constructor(private courseDataService: DataServiceService,
               private fb: FormBuilder) {
-    this.courseData.getData().valueChanges().subscribe(
+    this.courseDataService.getCourseData().valueChanges().subscribe(
       data => {
-        this.allData = data;
-        console.log(data);
+        this.courseDatacIn = data;
+        console.log(this.courseDatacIn);
       }
     );
+    this.courseDataService.getStudentData().valueChanges().subscribe(
+      data => {
+        this.studentDataIn = data;
+        console.log(this.studentDataIn);
+      });
   }
 
   ngOnInit(): void {
@@ -42,27 +51,39 @@ export class DashboardComponent implements OnInit {
 
 
   addcourseButton() {
-
+    this.addCourseButtonActivate = true;
   }
 
   addStudentButton() {
-
+    this.addStudentButtonActivate = true;
   }
 
   appendCourse() {
     if (this.courseForm.controls.courseName.value !== null){
-     this.courseData.appendCourse(this.courseForm.controls.courseName.value);
+     this.courseDataService.appendCourse(this.courseForm.controls.courseName.value);
     }
 
   }
 
   appendStudent() {
     if (this.studentForm.controls.studentName.value != null){
-      this.courseData.appendStudentName(this.courseSelected, this.studentForm.controls.studentName.value );
+      this.courseDataService.appendStudentName(this.courseSelected, this.studentForm.controls.studentName.value );
     }
   }
 
   resetData() {
-    this.courseData.resetData();
+    this.courseDataService.resetData();
+  }
+
+  changeCourse() {
+    this.courseForm.controls.courseName.setValue(this.setCourse);
+    this.studentForm.controls.studentName.setValue('');
+
+    console.log(this.courseSelected);
+  }
+
+  changeStudent() {
+    this.studentForm.controls.studentName.setValue(this.studentSelected);
+    console.log(this.studentSelected);
   }
 }

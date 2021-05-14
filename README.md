@@ -1,6 +1,6 @@
 # What's this repo?
 
-This repo was an assesment asked by Jivrus technologies for me to do it as an assesment for Interview when I applied. Since I didn't completed on the given time I wasn't shortlisted but I did it anyway.
+This repo was an assesment asked by Jivrus technologies for me to do it as an assesment for Interview when I applied. Since I didn't complete on the given time I wasn't shortlisted but I did it anyway.
 
 ## Demo working Assesment :-  
 [Click to see Demo](https://navinbarnwal.github.io/jivrusAssesment/)
